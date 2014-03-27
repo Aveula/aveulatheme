@@ -105,6 +105,12 @@ aside#site-slider {
 #main-content {
 	//@include margin-leader;
 	//padding: 0.5em;
+	
+	a.feed-icon {
+		img {
+			width: auto;
+		}
+	}
 
 	@include at-breakpoint($break-3) {
 
@@ -167,6 +173,73 @@ aside#site-slider {
 				margin: 0 auto;
 				padding: 1em;
 			}
+			div.view-display-id-entity_view_1 {
+
+				//@include at-breakpoint($break-3) {
+					//@include span-columns(15, 15);
+					//overflow: hidden;
+
+					div.view-content {
+						@include adjust-font-size-to(12px);
+						ul {
+							@include span-columns(13, 15);
+							@include squish(1,1);
+							li{
+								@include span-columns(5, 15);
+								padding: 1em;
+								float: left;
+								&:before {
+									content: "";
+									padding: 0;
+								}
+								div.item-nombre {
+									margin: 0 -0.5em;
+									color: white;
+            			background-color: #09f;
+									text-transform: uppercase;
+									text-align: center;
+									font-size: 14px;
+									&:before {
+										font-family: icomoon;
+										content: "\e699";
+										padding-right: 0.5em;
+									}
+								}
+								div.item-paquete {
+									color: #09f;
+									&:before {
+										font-family: icomoon;
+										content: "\e699";
+										padding-right: 0.5em;
+									}
+								}
+								div.item-body {
+									ul {
+										margin: 0;
+										padding:0;
+										li {
+											width: 100%;
+											margin: 0;
+											padding:0;
+											background-color: white;
+											white-space: normal;
+											border: none;
+											&:before {
+												font-family: icomoon;
+												content: "\e732";
+												padding-right: 0.5em;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			div.view-footer {
+				clear: both;
+			}
+			//}
 		}
 	}
 }
