@@ -1,0 +1,85 @@
+/**
+ * http://csswizardry.com/2011/10/fully-fluid-responsive-css-carousel/
+ */
+
+aside#site-slider {
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	ul.slider {
+		position: relative;
+		width: 500%; /* 5 slides * 100% = 500% */
+		overflow: hidden;
+		list-style-type: none;
+
+    -moz-animation:    carousel 30s infinite;
+    -webkit-animation: carousel 30s infinite;
+    animation:         carousel 30s infinite;
+
+		> li {
+			position: relative;
+			float: left;
+			width: 20%;
+		}
+
+		p {
+			@include rhythm;
+			font-size:        1em;
+			padding:          0.5em;
+			position:         absolute;
+			right:            0px;
+			bottom:           0px;
+			left:             70%;
+			top:              0px;
+			text-align:       center;
+			color:            #fff;
+			background-color: rgba($azul,0.3);
+		}
+	}
+}
+@-webkit-keyframes carousel {
+    0%    { left:0; }
+    11%   { left:0; }
+    12.5% { left:-100%; }
+    23.5% { left:-100%; }
+    25%   { left:-200%; }
+    36%   { left:-200%; }
+    37.5% { left:-300%; }
+    48.5% { left:-300%; }
+    50%   { left:-400%; }
+    61%   { left:-400%; }
+    62.5% { left:-300%; }
+    73.5% { left:-300%; }
+    75%   { left:-200%; }
+    86%   { left:-200%; }
+    87.5% { left:-100%; }
+    98.5% { left:-100%; }
+    100%  { left:0; }
+}
+
+@keyframes carousel {
+    0%    { left:0; }
+    11%   { left:0; }
+    12.5% { left:-100%; }
+    23.5% { left:-100%; }
+    25%   { left:-200%; }
+    36%   { left:-200%; }
+    37.5% { left:-300%; }
+    48.5% { left:-300%; }
+    50%   { left:-400%; }
+    61%   { left:-400%; }
+    62.5% { left:-300%; }
+    73.5% { left:-300%; }
+    75%   { left:-200%; }
+    86%   { left:-200%; }
+    87.5% { left:-100%; }
+    98.5% { left:-100%; }
+    100%  { left:0; }
+}
+

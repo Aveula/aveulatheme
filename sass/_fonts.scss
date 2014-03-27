@@ -1,0 +1,239 @@
+@import "icomoon";
+@import "icomoon-wwdesigns";
+@import "icomoon-webhostinghub2";
+
+.site {
+	font-family: 'Droid Serif', serif;
+  
+	h1,h2,h3,h4,h5,h6 {
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	h1 { font-size: 2.5em; }
+	h2 { font-size: 1.85em; }
+	h3 { font-size: 1.5em; }
+	h4 { font-size: 1.35em; }
+	h5 { font-size: 1.20em; }
+	h6 { font-size: 1.10em; }
+
+	p {
+		@include rhythm(1,0,0,1);
+	}
+	a {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+#site-header {
+	@include rhythm-borders;
+	border: none;
+	h1.title {
+		a{
+			@include adjust-font-size-to(24px);
+			text-transform: lowercase;
+		}
+		&:first-letter {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+	h2.slogan {
+	  @include adjust-font-size-to(12px);
+	}
+}
+
+#main-content {
+	//@include adjust-font-size-to(18px);
+	@include rhythm-borders;
+	border: none;
+	h1, h2 {
+		@include rhythm(1,0,0,1);
+	}
+
+	article#servicios,
+  .node-servicio	{
+		h1 {
+			@include rhythm;
+			text-align: center;
+		}
+
+		li {
+			//@include rhythm(1,0,0,1);
+			@include rhythm-borders;
+			border: none;
+			&:before {
+				font-family: icomoon;
+				content: "\e732";
+				//@include apply-side-rhythm-border(right);
+				//border: none;
+			}
+			a {
+				//@include adjust-font-size-to(18px);
+			}
+			p {
+				@include adjust-font-size-to(13px);
+				text-align: justify;
+				white-space: normal;		
+			}
+		}
+		iframe {
+			@include rhythm(1,0,0,1);
+		}
+	}
+	.node-servicio {
+		li{
+			&:before {
+				@include apply-side-rhythm-border(right);
+				border: none;
+			}
+		}
+	}
+
+	article.servicio.excerpt {
+
+		@include at-breakpoint($break-3) {
+			@include rhythm-borders;
+			border: none;
+			header {
+				@include rhythm(0,0,1,0);
+				h2 {
+					@include adjust-font-size-to(12px);
+					@include rhythm;
+					i {
+						@include adjust-font-size-to(16px);
+						padding: 1em;
+						margin-right: 0.2em;
+					}
+				}
+			}
+			p {
+				@include adjust-font-size-to(11px);
+				line-height: 1.5em;
+				@include rhythm;
+			}
+		}
+
+	}
+
+	article.post {
+		header {
+			@include rhythm(1,1,1,1);
+			text-align: center;
+			h1 {
+	      @include adjust-font-size-to(48px);
+				@include rhythm;
+			}
+			.entry-details {
+			  @include adjust-font-size-to(12px);
+				time {
+					&:before { content: " · "; }
+				}	
+				.tags { display: block; }
+			}
+		}
+		section.main-content {
+			h2 {
+				@include adjust-font-size-to(24px);
+				@include rhythm(0,1,0,0);
+			}
+		}
+		footer {
+			h1 {
+  			@include adjust-font-size-to(18px);
+			}
+			div.bio {
+  			@include adjust-font-size-to(14px);
+			}
+		}
+	}
+}
+
+#last-articles {
+	@include rhythm-borders;
+	border: none;
+	h1 {
+		@include adjust-font-size-to(16px);
+		@include rhythm;
+	}
+	.excerpt {
+		@include adjust-font-size-to(14px);
+		@include rhythm-borders;
+		border: none;
+		text-align: justify;
+		header {
+			font-family: 'Lustria', serif;
+			text-align: center;
+			.entry-details {
+				@include adjust-font-size-to(12px);
+				time {
+					&:before { content: " - "; }
+				}	
+				.tags { display: block; }
+			}
+		}
+		i {
+			@include adjust-font-size-to(12px);
+			display: block;
+			width: 100%;
+			text-align: right;
+		}
+		span.icon-wwdesigns-0036 {
+			@include adjust-font-size-to(72px);
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+#site-nav {
+	a.bt-menu-trigger {
+		@include adjust-font-size-to(20px);
+	}
+	@include at-breakpoint($break-2) {
+		@include adjust-font-size-to(12px);
+		@include rhythm;
+		//@include apply-side-rhythm-border(right);
+		border: none;
+		ul {
+			@include rhythm(0,0.5,0.5,0);
+			@include apply-side-rhythm-border(left);
+			@include apply-side-rhythm-border(right);
+			border: none;
+			li {
+				a {
+					@include rhythm(0,0.5,0.5,0);
+					@include apply-side-rhythm-border(left);
+					@include apply-side-rhythm-border(right);
+					border: none;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+#site-footer {
+	@include rhythm-borders;
+	border: none;
+	.icon-icomoon-newspaper {
+		@include adjust-font-size-to(72px);
+	}
+
+  section {
+		@include margin-trailer;
+	}
+
+	aside#contact {
+		section.vcard {
+			h1 {
+				@include adjust-font-size-to(20px);
+			}
+		}
+	}
+	aside#credits {
+		@include adjust-font-size-to(12px);
+	}
+}
+

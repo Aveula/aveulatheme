@@ -1,0 +1,198 @@
+$azul        : #09f;
+
+$gris-oscuro : #333;
+
+
+body {
+	background-color: tint($azul, 80%);
+}
+a {
+  @include link-colors($azul, $azul, $azul, $azul, $azul)
+}
+
+.site {
+	background-color: white;
+	@include single-box-shadow;
+}
+
+#site-header {
+	@include box-shadow(rgba($gris-oscuro,0.5) 0px 1px 5px);
+	h1 {
+		a {
+			color: $gris-oscuro;
+		}
+		&:first-letter {
+			color: $azul;
+		}
+	}
+}
+
+#main-content {
+	//background-color: white;
+	color: tint($gris-oscuro, 30%);
+
+	h1, h2 {
+		color: $azul;
+	}
+	a {
+		color: $azul;
+	}
+	img {
+		background-color: white;
+		//@include box-shadow;
+	}
+
+	section.banner {
+		p {
+			background-color: rgba($azul, 0.3);
+			color: white;
+		}
+	}
+
+	article.servicio {
+	}
+
+	article.servicio.excerpt {
+		header {
+			h2 {
+				i {
+					color: white;
+					background-color: $azul;
+					@include border-radius(100%);
+				}
+				a{
+					color: $azul;
+					background-color: transparent;
+				}
+			}
+		}
+		p {
+		}
+	}
+
+	div.node-servicio {
+		section.banner {
+			div.field-name-field-slogan {
+				background-color: rgba($azul, 0.3);
+				color: white;
+			}
+		}
+	}
+}
+
+#last-articles {
+  background-color: tint($azul, 95%);
+	color: tint($gris-oscuro, 30%);
+	h1 {
+		//background-color: $azul;
+		//color: white;
+	}
+	.excerpt {
+		color: 3;
+		h1 {
+			border: none;
+		}
+		a {
+			color: $azul;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+#columns {
+}
+
+#site-nav {
+	//background-color: $gris-oscuro;
+	background-color: #2f2f2f;
+	ul {
+		li {
+			a {
+				color: white;
+				&:hover {
+					color: $azul;
+				}
+			}
+		}
+	}
+	@include at-breakpoint($break-2) {
+		background-color: transparent;
+		ul {
+			li {
+				&:hover {
+				}
+				a {
+					color: white;
+					background-color: $azul;
+					@include box-shadow(tint($gris-oscuro, 20%) 1px 1px 2px);
+					&:hover {
+						color: white;
+						@include box-shadow(0 0 0);
+					}
+				}
+			}
+		}
+	}
+}
+
+#languages {
+	color: white;
+	//background-color: $gris-oscuro;
+	background-color: #2f2f2f;
+	li {
+		color: $gris-oscuro;
+		a {
+			color: tint($gris-oscuro, 60%);
+			&:hover {
+				color: $azul;
+			}
+		}
+	}
+	@include at-breakpoint($break-2) {
+	  background-color: transparent;
+	}
+}
+
+#site-footer {
+	//background-color: tint(black,20%);
+	background-color: #2f2f2f;
+	color: tint($gris-oscuro, 80%);
+	a {
+		color: $azul;
+	}
+	a.back-to-top {
+		color: white;
+		background-color: black;
+		opacity: 0.7;
+	}
+
+	aside#contact {
+		border-bottom: 1px solid #121212;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+			@include rhythm-borders;
+			border: none;
+			color: #ccc;
+			background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+			box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	}
+
+	aside#credits {
+		ul {
+			@include horizontal-list;
+			@include rhythm-borders;
+			border: none;
+			li,
+			li:first-child,
+			li:last-child	{
+				@include apply-side-rhythm-border(left);
+				@include apply-side-rhythm-border(right);
+				border: none;
+				border-right: 1px solid #121212;
+				box-shadow: 1px 0 0 rgba(255, 255, 255, 0.07);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,190 @@
+$total-columns : 4;
+$column-width  : 4em;
+$gutter-width  : 0em;
+$grid-padding  : 0em;
+
+$break-1 : 30em 6;
+$break-2 : 40em 8;
+$break-3 : 60em 15;
+
+$relative-font-sizing  : true;
+$show-grid-backgrounds : true;
+//$container-width: 100%;
+$container-width: container-outer-width(15);
+
+.site {
+	@include container($total-columns, $break-1, $break-2, $break-3);
+	margin: 0 auto;
+	min-width: 320px;
+	//@include susy-grid-background;
+	&:before {
+		//content: "Break-0";
+	}
+
+	@include at-breakpoint($break-1) {
+		&:before {
+			//content: "Break-1";
+		}
+	}
+	@include at-breakpoint($break-2) {
+		&:before {
+			//content: "Break-2";
+		}
+	}
+	@include at-breakpoint($break-3) {
+	  //@include susy-grid-background;
+		&:before {
+			//content: "Break-3";
+		}
+	}
+}
+
+#site-header {
+
+	//background-image: url(../images/background02.png), url(../images/background01.png);
+	//background-position: top right, top left;
+	//background-repeat: no-repeat, repeat-x;
+	
+	#site-nav {
+		ul {
+			li.leaf {
+				list-style-type: none;
+				list-style-image: none;
+			}
+		}
+	}
+
+  @include at-breakpoint($break-3) {
+		position: relative;
+		overflow: hidden;
+		@include margin-trailer(0.1);
+		.title {
+			//@include span-columns(9, 15);
+		}
+		.slogan {
+			//@include span-columns(9, 15);
+		}
+
+		p {
+			@include span-columns(5 omega, 15);
+		}
+
+		#block-locale-language {
+			//@include span-columns(5, 15);
+			@include horizontal-list;
+			position: absolute;
+			right: 0;
+			top: 0;
+			ul {
+				@include rhythm-borders;
+				border: none;
+				float: right;
+			}
+		}
+		
+		#site-nav {
+			@include span-columns(15, 15);
+			ul {
+			  @include horizontal-list;
+				float: right;
+				li {
+				}
+		  }
+		}
+	}
+}
+
+aside#site-slider {
+	// See _slider.scss
+	ul.slider {
+		li {
+		}
+	}
+}
+
+#main-content {
+	//@include margin-leader;
+	//padding: 0.5em;
+
+	@include at-breakpoint($break-3) {
+
+		h1#page-title {
+			@include pre(1);
+		}
+		article#servicios {
+			overflow: hidden;
+			@include span-columns(15, 15);
+			ul {
+				@include horizontal-list;
+			  @include span-columns(15, 15);
+				@include pre(1);
+				li {
+			    @include span-columns(3, 15);
+					margin-right: 1em;
+					&.views-row-last {
+						margin-right: 0;
+					}
+					img {
+						max-width: 100%;
+						height: auto;
+						display: block;
+					}
+					p {
+					}
+				}
+			}
+		}
+
+		div.node-servicio {
+			position: relative;
+			h1 {
+				color: rgba(white, 0.8);
+				background-color: rgba(#333, 0.3);
+				position: absolute;
+				top: 0.5em;
+				left: 0.5em;
+				padding: 0.5em;
+				z-index: 10;
+			}
+			section.banner {
+				position: relative;
+				div.field-name-field-banner-image {
+					//top: 0;
+					//left: 0;
+				}
+				div.field-name-field-slogan {
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 30%;
+					height: 100%;
+				}
+			}
+			div.field-name-field-body {
+			}
+			div.field-name-field-image {
+				width: 50%;
+				margin: 0 auto;
+				padding: 1em;
+			}
+		}
+	}
+}
+
+#site-footer {
+
+  nav {
+		a.back-to-top {
+			position: fixed;
+			bottom: 0;
+			right: 0.5em;
+			padding: 0.5em;
+			display: none;
+			@include border-radius(0.5em 0.5em 0 0);
+		}
+	}
+
+	@include at-breakpoint($break-3) {
+		@include span-columns(15, 15);
+	}
+}

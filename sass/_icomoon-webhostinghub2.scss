@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'webhostinghub2';
+	src:url('../fonts/webhostinghub2.eot?qm48dw');
+	src:url('../fonts/webhostinghub2.eot?#iefixqm48dw') format('embedded-opentype'),
+		url('../fonts/webhostinghub2.woff?qm48dw') format('woff'),
+		url('../fonts/webhostinghub2.ttf?qm48dw') format('truetype'),
+		url('../fonts/webhostinghub2.svg?qm48dw#webhostinghub2') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+article.servicio i[class^="icon-whh2-"],
+[class*=" icon-whh2"] {
+	font-family: 'webhostinghub2';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-whh2-home:before {
+	content: "\e60e";
+}
+.icon-whh2-piggybank:before {
+	content: "\ed28";
+}
+.icon-whh2-uniF5EB:before {
+	content: "\e7f3";
+}
+.icon-whh2-uniF749:before {
+	content: "\e729";
+}
+.icon-whh2-uniF53E:before {
+	content: "\e93c";
+}
+.icon-whh2-treediagram:before {
+	content: "\ebbd";
+}
+.icon-whh2-network:before {
+	content: "\eb77";
+}
+.icon-whh2-plugin:before {
+	content: "\eb71";
+}
+.icon-whh2-stocks:before {
+	content: "\ed21";
+}
