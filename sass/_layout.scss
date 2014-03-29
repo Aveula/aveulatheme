@@ -107,6 +107,7 @@ aside#site-slider {
 	//padding: 0.5em;
 	
 	a.feed-icon {
+		float: right;
 		img {
 			width: auto;
 		}
@@ -138,6 +139,14 @@ aside#site-slider {
 					p {
 					}
 				}
+			}
+		}
+
+		.node {
+			ul.inline, ul.links.inline {
+				float: right;
+			}
+			.field-name-field-tags {
 			}
 		}
 

@@ -50,6 +50,9 @@
 	h1, h2 {
 		@include rhythm(1,0,0,1);
 	}
+	h1#page-title {
+		text-align: center;
+	}
 
 	article#servicios,
   .node-servicio	{
@@ -81,6 +84,18 @@
 			@include rhythm(1,0,0,1);
 		}
 	}
+
+	.node {
+		ul.inline, ul.links.inline {
+			@include adjust-font-size-to(12px);
+		}
+		.field-name-field-tags {
+			@include adjust-font-size-to(12px);
+			@include rhythm-borders;
+			border: none;
+		}
+	}
+
 	.node-servicio {
 		li{
 			&:before {
