@@ -253,23 +253,26 @@ function aveulatheme_menu_link(array $variables) {
    * Añado clases para icomoon a los menús principales.
    */
   $menus     = array('menu-main-menu-espa-ol', 'menu-main-menu-ingl-s', 'menu-main-menu-alem-n');
-  $inicio    = array(554, 557, 678);
-  $servicios = array(555, 558);
-  $paquetes  = array(560, 561);
-  $blog      = array();
-  $contacto  = array(556, 559);
+  $inicio    = array('Inicio', 'Home', 'Startseite');
+  $servicios = array('Servicios', 'Services', 'Dienstleistungen');
+  $paquetes  = array('Paquetes', 'Packs', 'Packages');
+  $blog      = array('Blog');
+  $contacto  = array('Contacto', 'Contact', 'Kontakt');
 
   if (in_array($element['#original_link']['menu_name'], $menus)) {
-	if (in_array($element['#original_link']['mlid'], $inicio)) {
+	if (in_array($element['#original_link']['link_title'], $inicio)) {
 		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-home2';
 	}
-	if (in_array($element['#original_link']['mlid'], $servicios)) {
+	if (in_array($element['#original_link']['link_title'], $servicios)) {
 		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-cog';
 	}
-	if (in_array($element['#original_link']['mlid'], $paquetes)) {
+	if (in_array($element['#original_link']['link_title'], $paquetes)) {
 		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-profile';
 	}
-	if (in_array($element['#original_link']['mlid'], $contacto)) {
+	if (in_array($element['#original_link']['link_title'], $blog)) {
+		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-quill';
+	}
+	if (in_array($element['#original_link']['link_title'], $contacto)) {
 		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-phone';
 	}
   }
