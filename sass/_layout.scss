@@ -88,6 +88,12 @@ $container-width: container-outer-width(15);
 			  @include horizontal-list;
 				float: right;
 				li {
+					a:before {
+						padding: 0 0.5em;
+					}
+				}
+				li.last {
+					padding-right: 4px;
 				}
 		  }
 		}

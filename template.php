@@ -236,6 +236,51 @@ function aveulatheme_links($variables) {
   return theme_links($variables);
 }
 
+/**
+ * Returns HTML for a menu link and submenu.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - element: Structured array data for a menu link.
+ *
+ * @ingroup themeable
+ */
+function aveulatheme_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  /**
+   * Añado clases para icomoon a los menús principales.
+   */
+  $menus     = array('menu-main-menu-espa-ol', 'menu-main-menu-ingl-s', 'menu-main-menu-alem-n');
+  $inicio    = array(554, 557, 678);
+  $servicios = array(555, 558);
+  $paquetes  = array(560, 561);
+  $blog      = array();
+  $contacto  = array(556, 559);
+
+  if (in_array($element['#original_link']['menu_name'], $menus)) {
+	if (in_array($element['#original_link']['mlid'], $inicio)) {
+		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-home2';
+	}
+	if (in_array($element['#original_link']['mlid'], $servicios)) {
+		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-cog';
+	}
+	if (in_array($element['#original_link']['mlid'], $paquetes)) {
+		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-profile';
+	}
+	if (in_array($element['#original_link']['mlid'], $contacto)) {
+		$element['#localized_options']['attributes']['class'][] = 'icon-icomoon-phone';
+	}
+  }
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
 /*
  * Catálogo View Theme Functions
  */
