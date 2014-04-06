@@ -75,6 +75,16 @@ a {
 		}
 	}
 
+	div.node-inmueble {
+		.field-name-field-galeria-inmueble {
+			.field-items {
+				@include border-radius(0.5em);
+				border: solid 0.075em $azul;
+				border-color: $azul;
+			}
+		}
+	}
+
 	div.node-servicio {
 		section.banner {
 			div.field-name-field-slogan {
@@ -83,6 +93,16 @@ a {
 			}
 		}
 	}
+}
+
+#sidebar-first {
+  background-color: tint($azul, 95%);
+	color: tint($gris-oscuro, 30%);
+}
+
+#sidebar-second {
+  background-color: tint($azul, 93%);
+	color: tint($gris-oscuro, 30%);
 }
 
 #last-articles {

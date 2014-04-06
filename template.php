@@ -130,8 +130,8 @@ function aveulatheme_process_maintenance_page(&$variables) {
 }
 
 function aveulatheme_preprocess_node(&$variables, $hook) {
+	//kpr($variables);
 }
-
 
 function aveulatheme_item_list($variables) {
   $items = $variables['items'];

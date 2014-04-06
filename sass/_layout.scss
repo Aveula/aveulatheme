@@ -155,6 +155,43 @@ aside#site-slider {
 			.field-name-field-tags {
 			}
 		}
+		.node-teaser {
+		}
+
+// node inmueble //
+		div.node-inmueble {
+			.field-name-field-galeria-inmueble {
+				.field-item {
+					display: inline-block;
+					width: 25%;
+					max-height: 150px;
+					overflow: hidden;
+					img {
+						padding: 0.3em;
+					}
+				}
+			}
+
+		}
+// Fin node Inmueble *//
+
+		div.node-article {
+			position: relative;
+			section.banner {
+				position: relative;
+				div.field-name-field-banner-image {
+					//top: 0;
+					//left: 0;
+				}
+				div.field-name-field-texto-destacado {
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 30%;
+					height: 100%;
+				}
+			}
+		}
 
 		div.node-servicio {
 			position: relative;
@@ -179,6 +216,7 @@ aside#site-slider {
 					right: 0;
 					width: 30%;
 					height: 100%;
+					padding: 0.5em;
 				}
 			}
 			div.field-name-field-body {
@@ -255,6 +293,68 @@ aside#site-slider {
 				clear: both;
 			}
 			//}
+		}
+	}
+}
+
+#sidebar-first {
+	@include span-columns(15, 15);
+
+	#block-views-inmuebles-block {
+
+		.views-row {
+			display: inline-block;
+			width: 25%;
+			max-height: 150px;
+			overflow: hidden;
+			.views-field-field-banner-image {
+				padding: 0.3em;
+			}
+			.views-field-field-title {
+			}
+		}
+	}
+
+	@include at-breakpoint($break-3) {
+		#block-views-servicios-bloque-servicios, .item-list {
+			overflow: hidden;
+			@include span-columns(15, 15);
+			ul {
+				@include horizontal-list;
+			  @include span-columns(15, 15);
+				@include pre(1);
+				li {
+			    @include span-columns(3, 15);
+					margin-right: 1em;
+					&.views-row-last {
+						margin-right: 0;
+					}
+					img {
+						max-width: 100%;
+						height: auto;
+						display: block;
+					}
+					p {
+					}
+				}
+			}
+		}
+	}
+}
+
+#sidebar-second {
+
+	@include at-breakpoint($break-3) {
+		@include span-columns(15, 15);
+		.region {
+			@include pre(1);
+		}
+
+		.block {
+			@include span-columns(4, 15);
+			margin-right: 1.33333333333333333333em;
+			@include rhythm-borders;
+			border: none;
 		}
 	}
 }

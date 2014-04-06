@@ -30,12 +30,13 @@ aside#site-slider {
 
 		p {
 			@include rhythm;
-			font-size:        1em;
+			font-size:        2em;
+			line-height:      1em;
 			padding:          0.5em;
 			position:         absolute;
 			right:            0px;
 			bottom:           0px;
-			left:             70%;
+			left:             60%;
 			top:              0px;
 			text-align:       center;
 			color:            #fff;
